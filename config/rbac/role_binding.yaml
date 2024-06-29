@@ -15,5 +15,6 @@ roleRef:
   name: manager-role
 subjects:
 - kind: ServiceAccount
-  name: controller-manager
-  namespace: system
+  name: resourcemonitor-controller-manager
+  namespace: resourcemonitor-system
+
