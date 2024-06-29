@@ -1,0 +1,7 @@
+apiVersion: monitor.example.com/v1alpha1
+kind: ResourceMonitor
+metadata:
+  name: resourcemonitor-sample
+spec:
+  podThreshold: 10
+
