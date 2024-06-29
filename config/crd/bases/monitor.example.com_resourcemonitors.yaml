@@ -34,10 +34,21 @@ spec:
           spec:
             description: ResourceMonitorSpec defines the desired state of ResourceMonitor
             properties:
+              alertmanager:
+                properties:
+                  namespace:
+                    type: string
+                  serviceName:
+                    type: string
+                required:
+                - namespace
+                - serviceName
+                type: object
               podThreshold:
                 description: Number of pods to trigger alert
                 type: integer
             required:
+            - alertmanager
             - podThreshold
             type: object
           status:

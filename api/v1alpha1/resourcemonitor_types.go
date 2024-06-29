@@ -26,6 +26,12 @@ import (
 type ResourceMonitorSpec struct {
 	// Number of pods to trigger alert
     PodThreshold int `json:"podThreshold"`
+	Alertmanager AlertmanagerConfig `json:"alertmanager"`
+}
+
+type AlertmanagerConfig struct {
+    Namespace  string `json:"namespace"`
+    ServiceName string `json:"serviceName"`
 }
 
 // ResourceMonitorStatus defines the observed state of ResourceMonitor

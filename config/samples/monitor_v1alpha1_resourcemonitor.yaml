@@ -4,4 +4,7 @@ metadata:
   name: resourcemonitor-sample
 spec:
   podThreshold: 10
+  alertmanager:
+    namespace: "monitoring"
+    serviceName: "prometheus-kube-prometheus-alertmanager"
 
