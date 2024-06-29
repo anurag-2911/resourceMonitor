@@ -5,4 +5,4 @@ kind: Kustomization
 images:
 - name: controller
   newName: anurag2911/resourcemonitor
-  newTag: latest
+  newTag: 1.0.0

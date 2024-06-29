@@ -31,6 +31,7 @@ type ResourceMonitorReconciler struct {
 
 func (r *ResourceMonitorReconciler) Reconcile(ctx context.Context, req reconcile.Request) (reconcile.Result, error) {
     log := log.FromContext(ctx)
+    log.Info("Reconcile function called", "ResourceMonitor", req.NamespacedName)
 
     // Fetch the ResourceMonitor instance
     instance := &monitorv1alpha1.ResourceMonitor{}
@@ -58,7 +59,7 @@ func (r *ResourceMonitorReconciler) Reconcile(ctx context.Context, req reconcile
         log.Error(err, "unable to update ResourceMonitor status")
         return reconcile.Result{}, err
     }
-
+    log.Info("raise alert function called", "ResourceMonitor", req.NamespacedName)
     // Check the Pod threshold
     if podCount > instance.Spec.PodThreshold {
         log.Info(fmt.Sprintf("Pod count %d exceeds threshold %d", podCount, instance.Spec.PodThreshold))
